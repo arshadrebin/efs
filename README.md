@@ -1,1 +1,3 @@
-# efs
+### Elastic File System
+
+Elastic File System (EFS) is a scalable, fully managed file storage service provided by Amazon Web Services (AWS). It is designed to provide highly available and durable file storage that can be accessed concurrently by multiple EC2 instances or on-premises servers.Amazon EFS is commonly used for a variety of use cases, including content management, web hosting, development and testing environments, database backups, analytics, and machine learning. Its ability to scale automatically and provide shared access to files makes it a versatile and convenient storage solution within the AWS ecosystem. Overall, Amazon EFS provides a highly scalable and shared file storage solution for your AWS infrastructure. It eliminates the complexity of managing file servers and allows you to easily share data across multiple instances and services.
