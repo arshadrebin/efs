@@ -38,14 +38,35 @@ The creation process may take a few moments. Once the file system is created, yo
 ``` 
 # ssh -i keypair ec2-user@Public IP or Public DNS
 [ec2-user@ip-172-31-11-108 ~]$ sudo yum install amazon-efs-utils -y
+```
 
-
-For testing purpose we need to put some file to the doc root of the apache server. So I'm installing apache and php to the master instance.
+4. For testing purpose we need to put some file to the doc root of the apache server. So I'm installing apache and php to the master instance.
 
 ```
 [ec2-user@ip-172-31-11-108 ~]$ sudo yum install httpd php -y
 [ec2-user@ip-172-31-11-108 ~]$ sudo systemctl restart httpd php-fpm 
 [ec2-user@ip-172-31-11-108 ~]$ sudo systemctl enable httpd php-fpm
+```
+
+5. After this, we would need to mount the EFS to the instance. Add an entry like below in fstab. Please change the fs-ID according to yours.
+
+<img width="736" alt="Screenshot 2023-05-30 115520" src="https://github.com/arshadrebin/efs/assets/116037443/3b6cff81-8a27-4f14-8cd5-6fcef54795b4">
+
+Then follow the below steps to mount and verify.
+
+```
+[ec2-user@ip-172-31-11-108 html]$ sudo mount -a
+[ec2-user@ip-172-31-11-108 html]$ df -h
+Filesystem                                           Size  Used Avail Use% Mounted on
+devtmpfs                                             4.0M     0  4.0M   0% /dev
+tmpfs                                                475M     0  475M   0% /dev/shm
+tmpfs                                                190M  2.8M  188M   2% /run
+/dev/xvda1                                           8.0G  1.6G  6.4G  20% /
+tmpfs                                                475M     0  475M   0% /tmp
+tmpfs                                                 95M     0   95M   0% /run/user/1000
+/dev/xvda128                                          10M  1.3M  8.7M  13% /boot/efi
+fs-048a2ef167d2be7c4.efs.ap-south-1.amazonaws.com:/  8.0E     0  8.0E   0% /var/www/html
+```
 
 
 
