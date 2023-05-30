@@ -9,6 +9,4 @@ EFS is built using the Network File System version 4 (NFSv4) protocol, which all
   
   
 
-                             
-
-![Untitled Diagram](https://github.com/arshadrebin/efs/assets/116037443/7c3d33e9-e5ae-40a7-a530-cc616bb48f40)
+                            
