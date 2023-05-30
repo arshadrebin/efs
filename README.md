@@ -19,8 +19,20 @@ In order to create EFS via AWS console, you would need to follow the below steps
 3. Click on the "Create file system" button.
 4. In the "Create file system" wizard, configure the following settings:
 
-    Choose a VPC: Select the Virtual Private Cloud (VPC) in which you want to create the file system.
-    Availability zones: Choose the availability zones where you want your file system to be created. Amazon EFS automatically replicates data across these zones for high       availability.
-    Encryption: Select whether you want to enable encryption at rest for your file system. You can choose to use the default encryption or specify a custom AWS Key             Management Service (KMS) key.
-    Performance mode: Choose the appropriate performance mode based on your workload requirements. The available options are "General Purpose" and "Max I/O."
-    Throughput mode: Select the desired throughput mode based on your workload's performance needs. The options include "Bursting" and "Provisioned."
+Enter the name and select the VPC. Click on the Customized option and make the changes as below.
+
+<img width="948" alt="Screenshot 2023-05-30 111328" src="https://github.com/arshadrebin/efs/assets/116037443/a7a526e0-6fff-46f2-8de8-8b0513880566">
+   
+<img width="730" alt="Screenshot 2023-05-30 111439" src="https://github.com/arshadrebin/efs/assets/116037443/d2196477-730b-40f2-a6ad-95cbc517e20e">
+
+Please make sure that the port 2049 should be opened on the security group.
+
+The creation process may take a few moments. Once the file system is created, you can start using it by mounting it on your EC2 instances or integrating it with other AWS services.
+
+### Mounting of the EFS to the instance.
+
+--- arshad rebin
+
+
+
+
