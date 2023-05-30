@@ -55,8 +55,8 @@ The creation process may take a few moments. Once the file system is created, yo
 Then follow the below steps to mount and verify.
 
 ```
-[ec2-user@ip-172-31-11-108 html]$ sudo mount -a
-[ec2-user@ip-172-31-11-108 html]$ df -h
+[ec2-user@ip-172-31-11-108 ~]$ sudo mount -a
+[ec2-user@ip-172-31-11-108 ~]$ df -h
 Filesystem                                           Size  Used Avail Use% Mounted on
 devtmpfs                                             4.0M     0  4.0M   0% /dev
 tmpfs                                                475M     0  475M   0% /dev/shm
@@ -68,7 +68,12 @@ tmpfs                                                 95M     0   95M   0% /run/
 fs-048a2ef167d2be7c4.efs.ap-south-1.amazonaws.com:/  8.0E     0  8.0E   0% /var/www/html
 ```
 
+6. Now upload or clone some website contents to the apache document root and change its ownership.
 
-
+```
+[ec2-user@ip-172-31-11-108 ~]$ sudo git clone https://github.com/arshadrebin/AWS-ELB-Site.git  /var/website/
+[ec2-user@ip-172-31-11-108 ~]$ sudo cp -r /var/website/*  /var/www/html/
+[ec2-user@ip-172-31-11-108 ~]$ sudo chown -R apache:apache /var/www/html/*
+```
 
 
