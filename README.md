@@ -36,10 +36,16 @@ The creation process may take a few moments. Once the file system is created, yo
 3. Install a package called efs-utils to mount the EFS to the instance.
 
 ``` 
-#ssh -i keypair ec2-user@Public IP or Public DNS
-[ec2-user@ip-172-31-15-100 ~]$ sudo yum install amazon-efs-utils -y
+# ssh -i keypair ec2-user@Public IP or Public DNS
+[ec2-user@ip-172-31-11-108 ~]$ sudo yum install amazon-efs-utils -y
 
 
+For testing purpose we need to put some file to the doc root of the apache server. So I'm installing apache and php to the master instance.
+
+```
+[ec2-user@ip-172-31-11-108 ~]$ sudo yum install httpd php -y
+[ec2-user@ip-172-31-11-108 ~]$ sudo systemctl restart httpd php-fpm 
+[ec2-user@ip-172-31-11-108 ~]$ sudo systemctl enable httpd php-fpm
 
 
 
