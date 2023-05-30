@@ -29,9 +29,9 @@ Please make sure that the port 2049 should be opened on the security group.
 
 The creation process may take a few moments. Once the file system is created, you can start using it by mounting it on your EC2 instances or integrating it with other AWS services.
 
-### Mounting of the EFS to the instance.
+#### Mounting of the EFS to the instance.
+---
 
---- arshad rebin
 
 
 
