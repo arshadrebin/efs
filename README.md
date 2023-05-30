@@ -5,5 +5,5 @@ Amazon Elastic File System (EFS) is a scalable and fully managed file storage se
 EFS is built using the Network File System version 4 (NFSv4) protocol, which allows it to provide a simple and familiar file system interface to EC2 instances. It supports the standard file system operations such as create, read, write, and delete, and allows multiple EC2 instances to concurrently access the same file system.
 
 
-                              ![Untitled Diagram](https://github.com/arshadrebin/efs/assets/116037443/022769dd-ec05-4da9-8a11-19bc0496daca)
+                                 ![Untitled Diagram](https://github.com/arshadrebin/efs/assets/116037443/022769dd-ec05-4da9-8a11-19bc0496daca)
 
