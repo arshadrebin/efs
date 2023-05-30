@@ -1,3 +1,26 @@
 ### Elastic File System
 
-Elastic File System (EFS) is a scalable, fully managed file storage service provided by Amazon Web Services (AWS). It is designed to provide highly available and durable file storage that can be accessed concurrently by multiple EC2 instances or on-premises servers.Amazon EFS is commonly used for a variety of use cases, including content management, web hosting, development and testing environments, database backups, analytics, and machine learning. Its ability to scale automatically and provide shared access to files makes it a versatile and convenient storage solution within the AWS ecosystem. Overall, Amazon EFS provides a highly scalable and shared file storage solution for your AWS infrastructure. It eliminates the complexity of managing file servers and allows you to easily share data across multiple instances and services.
+Elastic File System (EFS) is a scalable, fully managed file storage service provided by Amazon Web Services (AWS). It is designed to provide highly available and durable file storage that can be accessed concurrently by multiple EC2 instances or on-premises servers. Amazon EFS is commonly used for a variety of use cases, including content management, web hosting, development and testing environments, database backups, analytics, and machine learning. Its ability to scale automatically and provide shared access to files makes it a versatile and convenient storage solution within the AWS ecosystem. Overall, Amazon EFS provides a highly scalable and shared file storage solution for your AWS infrastructure. It eliminates the complexity of managing file servers and allows you to easily share data across multiple instances and services.
+
+Here are some key aspects and features of Amazon EFS:
+
+1. Scalability: Amazon EFS automatically scales its capacity as you add or remove files, eliminating the need for manual capacity planning. It can grow to petabyte-scale, and you only pay for the storage you use.
+2. Shared File System: Multiple EC2 instances running in the same Amazon VPC (Virtual Private Cloud) can access a single Amazon EFS file system concurrently. This enables collaboration and shared data access across instances.
+3. Durability and Availability: Amazon EFS is built to be highly durable and available. It automatically replicates data across multiple Availability Zones within a region, providing durability and protecting against the failure of a single Availability Zone.
+4. Security: Amazon EFS supports encryption of data at rest using AWS Key Management Service (KMS). It also integrates with AWS Identity and Access Management (IAM) for fine-grained access control and supports VPC security groups for network-level security.
+5. Integration: Amazon EFS integrates with various AWS services, including Amazon EC2, AWS Lambda, Amazon ECS, Amazon EKS, AWS Batch, and more. This allows you to easily use Amazon EFS as a shared storage solution for your applications.
+6. Performance: Amazon EFS is designed to provide low-latency, high-throughput performance. It can support thousands of concurrent connections and is optimized for a wide range of workloads.
+
+
+In order to create EFS via AWS console, you would need to follow the below steps.
+
+1. Sign in to the AWS Management Console (https://console.aws.amazon.com/).
+2. Open the Amazon EFS console by searching for "EFS" in the AWS service search bar or by navigating to the "Storage" category and selecting "Elastic File System."
+3. Click on the "Create file system" button.
+4. In the "Create file system" wizard, configure the following settings:
+
+    Choose a VPC: Select the Virtual Private Cloud (VPC) in which you want to create the file system.
+    Availability zones: Choose the availability zones where you want your file system to be created. Amazon EFS automatically replicates data across these zones for high       availability.
+    Encryption: Select whether you want to enable encryption at rest for your file system. You can choose to use the default encryption or specify a custom AWS Key             Management Service (KMS) key.
+    Performance mode: Choose the appropriate performance mode based on your workload requirements. The available options are "General Purpose" and "Max I/O."
+    Throughput mode: Select the desired throughput mode based on your workload's performance needs. The options include "Bursting" and "Provisioned."
