@@ -35,7 +35,8 @@ The creation process may take a few moments. Once the file system is created, yo
 2. Login to the instance.
 3. Install a package called efs-utils to mount the EFS to the instance.
 
-```#ssh -i keypair ec2-user@Public IP or Public DNS
+``` 
+#ssh -i keypair ec2-user@Public IP or Public DNS
 [ec2-user@ip-172-31-15-100 ~]$ sudo yum install amazon-efs-utils -y
 
 
