@@ -7,6 +7,8 @@ EFS is built using the Network File System version 4 (NFSv4) protocol, which all
 <p align="center">
   <img src="https://github.com/arshadrebin/efs/assets/116037443/7c3d33e9-e5ae-40a7-a530-cc616bb48f40"></p>
   
+  This representation shows the Amazon EFS file system as a box at the top, and below it are the EC2 instances represented by boxes. 
+  
   
 
                             
