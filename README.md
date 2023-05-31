@@ -35,6 +35,69 @@ Then we would need to mount this EFS into the EC2 instance.
 [ec2-user@ip-172-31-46-3 ~]$  sudo yum install amazon-efs-utils -y
 ```
 
+For the testing purpose, we would need to put some files to the document root of the server. So I am installing the apache and PHP to the master instance.
 
+```
+[ec2-user@ip-172-31-46-3 ~]$ sudo yum install httpd php -y
+[ec2-user@ip-172-31-46-3 ~]$ sudo systemctl restart httpd php-fpm
+[ec2-user@ip-172-31-46-3 ~]$ sudo systemctl enable  httpd php-fpm
+```
+
+
+After this we need to mount the elastic file system to the instance.
+
+```
+[ec2-user@ip-172-31-46-3 ~]$ sudo vim /etc/fstab
+```
+
+Add the below entry to the ftsab file. Need to change the fs-id accordingly.
+
+<img width="766" alt="Screenshot 2023-05-31 103136" src="https://github.com/arshadrebin/efs/assets/116037443/bab92bd4-b793-4292-8fe2-2c06934b3802">
+
+Then mount the file system and verify.
+
+```
+[ec2-user@ip-172-31-46-3 ~]$ sudo mount -a
+[ec2-user@ip-172-31-46-3 ~]$ df -h
+Filesystem                                           Size  Used Avail Use% Mounted on
+devtmpfs                                             4.0M     0  4.0M   0% /dev
+tmpfs                                                475M     0  475M   0% /dev/shm
+tmpfs                                                190M  2.8M  188M   2% /run
+/dev/xvda1                                           8.0G  1.6G  6.4G  20% /
+tmpfs                                                475M     0  475M   0% /tmp
+tmpfs                                                 95M     0   95M   0% /run/user/1000
+/dev/xvda128                                          10M  1.3M  8.7M  13% /boot/efi
+fs-072b061b3cd9022c7.efs.ap-south-1.amazonaws.com:/  8.0E     0  8.0E   0% /var/www/html
+````
+
+Now we would need to upload or clone some website contents to the apache document root.
+
+```
+[ec2-user@ip-172-31-46-3 ~]$ sudo git clone https://github.com/arshadrebin/AWS-ELB-Site.git  /var/website/
+[ec2-user@ip-172-31-46-3 ~]$ sudo cp -r /var/website/*  /var/www/html/
+[ec2-user@ip-172-31-46-3 ~]$ sudo chown -R apache:apache /var/www/html/*
+```
+
+### Mounting of the EFS on the EC2 instance which is created by Auto Scaling Group.
+
+Here we are going to see how we can mount the above EFS to an ASG created Instances.
+
+For this we need to create a Launch Configuration.
+
+Since I have taken Amazon Linux in the previous section, under the Launch Cionfiguration AMI choose the same AMI ID.
+
+On the Advance details, write down the user data as follows. Please chnage the fs-ID according to yours.
+
+```
+#!/bin/bash
+
+yum install amazon-efs-utils httpd php  -y
+echo "fs-072b061b3cd9022c7:/    /var/www/html/  efs  defaults,_netdev  0  0"  >> /etc/fstab
+mount -a
+systemctl restart httpd php-fpm
+systemctl enable httpd php-fpm
+```
+
+Then create an Auto Scaling Group with the LC which we created above. Now the newly deployed instance will have the same website document root and its contents of the master instance.
 
                             
