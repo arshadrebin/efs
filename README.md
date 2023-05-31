@@ -86,7 +86,7 @@ For this we need to create a Launch Configuration.
 
 Since I have taken Amazon Linux in the previous section, under the Launch Cionfiguration AMI choose the same AMI ID.
 
-On the Advance details, write down the user data as follows. Please chnage the fs-ID according to yours.
+On the Advance details, write down the user data as follows. Please change the fs-ID according to yours.
 
 ```
 #!/bin/bash
