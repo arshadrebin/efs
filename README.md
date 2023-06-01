@@ -4,12 +4,16 @@ Amazon Elastic File System (EFS) is a scalable and fully managed file storage se
 
 EFS is built using the Network File System version 4 (NFSv4) protocol, which allows it to provide a simple and familiar file system interface to EC2 instances. It supports the standard file system operations such as create, read, write, and delete, and allows multiple EC2 instances to concurrently access the same file system.
 
-<p align="center">
-  <img src="https://github.com/arshadrebin/efs/assets/116037443/7c3d33e9-e5ae-40a7-a530-cc616bb48f40"></p>
-  
-  This representation shows the Amazon EFS file system as a box at the top, and below it are the EC2 instances represented by boxes. 
-  
-  Below steps are used to create a simple EFS in AWS.
+
+![241981412-e2302d19-e20f-49f8-aaee-af012523e2c1](https://github.com/arshadrebin/efs/assets/116037443/67468091-4220-4833-8c6a-b428c2e21e6d)
+
+
+EFS offers a simple and scalable file storage solution that can be accessed by multiple instances within the same AWS region. It provides a file system interface, which means you can mount EFS to your instances using standard file system commands. This makes it easy to migrate existing applications that rely on traditional file systems to the cloud without modifying your application code.
+
+![241849660-b25e76f7-c96a-4b05-9348-74b088b43510](https://github.com/arshadrebin/efs/assets/116037443/f8ff6ad1-fbf5-49e7-bcbe-7b4e7c0e910b)
+
+
+Below steps are used to create a simple EFS in AWS.
   
 1. Go to the AWS Management Console and open the Amazon EFS console.
 2. Click on "Create file system."
