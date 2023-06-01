@@ -10,8 +10,6 @@ EFS is built using the Network File System version 4 (NFSv4) protocol, which all
 
 EFS offers a simple and scalable file storage solution that can be accessed by multiple instances within the same AWS region. It provides a file system interface, which means you can mount EFS to your instances using standard file system commands. This makes it easy to migrate existing applications that rely on traditional file systems to the cloud without modifying your application code.
 
-![241849660-b25e76f7-c96a-4b05-9348-74b088b43510](https://github.com/arshadrebin/efs/assets/116037443/f8ff6ad1-fbf5-49e7-bcbe-7b4e7c0e910b)
-
 
 Below steps are used to create a simple EFS in AWS.
   
