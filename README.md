@@ -104,4 +104,8 @@ systemctl enable httpd php-fpm
 
 Then create an Auto Scaling Group with the LC which we created above. Now the newly deployed instance will have the same website document root and its contents of the master instance.
 
+![241981412-e2302d19-e20f-49f8-aaee-af012523e2c1](https://github.com/arshadrebin/efs/assets/116037443/75d086cc-1841-49ee-a723-a0857cb3e76f)
+
+
+
                             
