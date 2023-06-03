@@ -82,6 +82,8 @@ Now we would need to upload or clone some website contents to the apache documen
 
 ### Mounting of the EFS on the EC2 instance which is created by Auto Scaling Group.
 
+![241981412-e2302d19-e20f-49f8-aaee-af012523e2c1](https://github.com/arshadrebin/efs/assets/116037443/75d086cc-1841-49ee-a723-a0857cb3e76f)
+
 Here we are going to see how we can mount the above EFS to an ASG created Instances.
 
 For this we need to create a Launch Configuration.
