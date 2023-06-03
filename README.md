@@ -86,9 +86,13 @@ Now we would need to upload or clone some website contents to the apache documen
 
 Here we are going to see how we can mount the above EFS to an ASG created Instances.
 
+#### Step 1
+
 For this we need to create a Launch Configuration.
 
+Go to EC2 >> Launch configuration section for creating the Launch configuration. Choose the name, AMI, Instance type, security group, key pair as per your wish.
 
+Copy and paste the below userdata under the Advanced configuration part. Change the fs-id as per yours.
 
 ```
 #!/bin/bash
@@ -100,7 +104,27 @@ systemctl restart httpd php-fpm
 systemctl enable httpd php-fpm
 ```
 
-Then create an Auto Scaling Group with the LC which we created above. Now the newly deployed instance will have the same website document root and its contents of the master instance.
+#### Step 2
+
+Then create an Auto Scaling Group with the Launch Configuration which we created above. Auto scaling group can be created from EC2 section >>> Auto Scaling Group. Choose the Launch configuration which created earlier and other values as per your wish.
+
+The instance which created using this target group will have the disk partition as below.
+
+===
+[ec2-user@ip-172-31-36-201 ~]$ df -h
+Filesystem                                           Size  Used Avail Use% Mounted on
+devtmpfs                                             4.0M     0  4.0M   0% /dev
+tmpfs                                                475M     0  475M   0% /dev/shm
+tmpfs                                                190M  2.8M  188M   2% /run
+/dev/xvda1                                           8.0G  1.7G  6.4G  21% /
+tmpfs                                                475M     0  475M   0% /tmp
+tmpfs                                                 95M     0   95M   0% /run/user/1000
+/dev/xvda128                                          10M  1.3M  8.7M  13% /boot/efi
+fs-072b061b3cd9022c7.efs.ap-south-1.amazonaws.com:/  8.0E  5.0M  8.0E   1% /var/www/html
+===
+
+
+
 
 
 
