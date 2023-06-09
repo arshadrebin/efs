@@ -122,9 +122,9 @@ Then create an Auto Scaling Group with the Launch Configuration which we created
 
 <img width="479" alt="Screenshot 2023-06-09 093505" src="https://github.com/arshadrebin/efs/assets/116037443/98f5af3f-2b9c-4eaf-9f6c-f48d03c1eb45">
 
-<img width="370" alt="Screenshot 2023-06-09 093636" src="https://github.com/arshadrebin/efs/assets/116037443/3c546014-56e0-4aca-80ca-74987bf6b2a7">
+<img width="470" alt="Screenshot 2023-06-09 093636" src="https://github.com/arshadrebin/efs/assets/116037443/3c546014-56e0-4aca-80ca-74987bf6b2a7">
 
-<img width="349" alt="Screenshot 2023-06-09 093715" src="https://github.com/arshadrebin/efs/assets/116037443/e0638013-b68c-4036-967e-137b6a7fa8f5">
+<img width="449" alt="Screenshot 2023-06-09 093715" src="https://github.com/arshadrebin/efs/assets/116037443/e0638013-b68c-4036-967e-137b6a7fa8f5">
 
 
 The instance which created using this target group will have the disk partition as below.
