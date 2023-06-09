@@ -92,6 +92,7 @@ For this we need to create a Launch Configuration.
 
 Go to EC2 >> Launch configuration section for creating the Launch configuration. Choose the name, AMI, Instance type, security group, key pair as per your wish.
 
+
 Copy and paste the below userdata under the Advanced configuration part. Change the fs-id as per yours.
 
 ```
@@ -103,6 +104,16 @@ mount -a
 systemctl restart httpd php-fpm
 systemctl enable httpd php-fpm
 ```
+
+<img width="629" alt="Screenshot 2023-06-09 092223" src="https://github.com/arshadrebin/efs/assets/116037443/b8f3f9a0-36bf-4e8f-b5ed-73a58c64d491">
+
+
+<img width="407" alt="Screenshot 2023-06-09 092323" src="https://github.com/arshadrebin/efs/assets/116037443/2fadf845-590d-4df4-9205-dd069995825c">
+
+
+
+
+
 
 #### Step 2
 
