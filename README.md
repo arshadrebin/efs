@@ -108,23 +108,23 @@ systemctl enable httpd php-fpm
 <img width="629" alt="Screenshot 2023-06-09 092223" src="https://github.com/arshadrebin/efs/assets/116037443/b8f3f9a0-36bf-4e8f-b5ed-73a58c64d491">
 
 
-<img width="343" alt="Screenshot 2023-06-09 092424" src="https://github.com/arshadrebin/efs/assets/116037443/c34d4c2e-c711-40d7-98d8-f30e8fb65e27">
+<img width="643" alt="Screenshot 2023-06-09 092424" src="https://github.com/arshadrebin/efs/assets/116037443/c34d4c2e-c711-40d7-98d8-f30e8fb65e27">
 
 
-<img width="319" alt="Screenshot 2023-06-09 092607" src="https://github.com/arshadrebin/efs/assets/116037443/f98dee97-2624-40cf-9320-417aa3bbc81a">
+<img width="619" alt="Screenshot 2023-06-09 092607" src="https://github.com/arshadrebin/efs/assets/116037443/f98dee97-2624-40cf-9320-417aa3bbc81a">
 
 
 #### Step 2
 
 Then create an Auto Scaling Group with the Launch Configuration which we created above. Auto scaling group can be created from EC2 section >>> Auto Scaling Group. Choose the Launch configuration which created earlier and other values as per your wish.
 
-<img width="478" alt="Screenshot 2023-06-09 093408" src="https://github.com/arshadrebin/efs/assets/116037443/89aedc21-4885-47d7-b4ed-71fabf5a1c89">
+<img width="678" alt="Screenshot 2023-06-09 093408" src="https://github.com/arshadrebin/efs/assets/116037443/89aedc21-4885-47d7-b4ed-71fabf5a1c89">
 
-<img width="479" alt="Screenshot 2023-06-09 093505" src="https://github.com/arshadrebin/efs/assets/116037443/98f5af3f-2b9c-4eaf-9f6c-f48d03c1eb45">
+<img width="679" alt="Screenshot 2023-06-09 093505" src="https://github.com/arshadrebin/efs/assets/116037443/98f5af3f-2b9c-4eaf-9f6c-f48d03c1eb45">
 
-<img width="470" alt="Screenshot 2023-06-09 093636" src="https://github.com/arshadrebin/efs/assets/116037443/3c546014-56e0-4aca-80ca-74987bf6b2a7">
+<img width="670" alt="Screenshot 2023-06-09 093636" src="https://github.com/arshadrebin/efs/assets/116037443/3c546014-56e0-4aca-80ca-74987bf6b2a7">
 
-<img width="449" alt="Screenshot 2023-06-09 093715" src="https://github.com/arshadrebin/efs/assets/116037443/e0638013-b68c-4036-967e-137b6a7fa8f5">
+<img width="649" alt="Screenshot 2023-06-09 093715" src="https://github.com/arshadrebin/efs/assets/116037443/e0638013-b68c-4036-967e-137b6a7fa8f5">
 
 
 The instance which created using this target group will have the disk partition as below.
